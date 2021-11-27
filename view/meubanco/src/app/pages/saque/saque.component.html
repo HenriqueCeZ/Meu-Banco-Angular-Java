@@ -1,18 +1,19 @@
 <h1>Saque</h1>
+
 <div class="row">
   <div class="col">
-    <app-label-input label="Conta" ></app-label-input>
-  </div>
-  <div class="col">
-    <app-label-input label="Agência" ></app-label-input>
-  </div>
-  <div class="col">
-    <app-label-input label="Valor" ></app-label-input>
+  <app-label-input type="text" label="Conta:"></app-label-input>
   </div>
 
+  <div class="col">
+  <app-label-input type="text" label="Agência:"></app-label-input>
+  </div>
+
+  <div class="col">
+  <app-label-input type="text" label="Valor:"></app-label-input>
+  </div>
+
+  <app-check-box label="Aceito os termos de uso"></app-check-box>
+  <app-button button="Enviar"></app-button>
 </div>
-<div class="mt-3">
-<app-check-box label="Aceito os termos"></app-check-box>
-</div>
-<app-button enviar="Sacar"></app-button>
 

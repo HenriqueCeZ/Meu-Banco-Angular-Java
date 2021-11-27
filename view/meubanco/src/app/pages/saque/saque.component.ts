@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-saque',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./saque.component.css']
 })
 export class SaqueComponent implements OnInit {
+
+  @Input()
+  titulo: string = 'Meu título';
+  exibir: boolean = true;
 
   constructor() { }
 

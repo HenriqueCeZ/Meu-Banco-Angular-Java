@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-label-input',
@@ -6,9 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./label-input.component.css']
 })
 export class LabelInputComponent implements OnInit {
-    @Input()
-     label: string = "";
 
+  @Input()
+  label: string = '';
+
+  @Input()
+  type: string = 'text' || 'email' || 'password';
   constructor() { }
 
   ngOnInit(): void {
