@@ -13,6 +13,8 @@ import { SaqueComponent } from './pages/saque/saque.component';
 import { LabelInputComponent } from './component/label-input/label-input.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { CadastrarClientesComponent } from './pages/clientes/cadastrar-clientes/cadastrar-clientes.component';
+import { SidebarComponent } from './component/sidebar/sidebar.component';
+
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { CadastrarClientesComponent } from './pages/clientes/cadastrar-clientes/
     LabelInputComponent,
     ClientesComponent,
     CadastrarClientesComponent,
+    SidebarComponent
+
 
 
   ],
