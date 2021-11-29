@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { Cliente } from '../clientes';
 import { ClientesService } from '../clientes.services';
 
 @Component({
@@ -9,26 +10,22 @@ import { ClientesService } from '../clientes.services';
 })
 export class CadastrarClientesComponent implements OnInit {
 
-  cliente = this.clienteService.getClient();
+  cliente!: Cliente ;
 
   checkoutForm = this.formBuilder.group({
-    nome: '',
-    cpf: '',
-    observacoes: '',
-    status: true
+
   });
 
-  constructor(
-    private clienteService: ClientesService,
-    private formBuilder: FormBuilder,
-  ) { }
+  constructor(private formBuilder: FormBuilder, private clienteService: ClientesService) {
+    this.cliente = new Cliente();
+  }
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
 
-    alert("Cliente cadastrado com os dados:"+this.clienteService.getClient())
+    alert("Cliente com nome: "+this.cliente.nome+"Cliente com cpf: "+this.cliente.cpf+"Cliente observações: "+this.cliente.observacoes+"Cliente com status: "+this.cliente.ativo)
     this.checkoutForm.reset();
   }
 
