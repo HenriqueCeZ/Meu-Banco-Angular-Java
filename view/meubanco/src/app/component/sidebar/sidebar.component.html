@@ -1,0 +1,39 @@
+<div id="layoutSidenav_nav">
+  <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+      <div class="sb-sidenav-menu">
+          <div class="nav">
+              <div class="sb-sidenav-menu-heading">Sistema</div>
+              <a class="nav-link" routerLink= ""><div class="sb-nav-link-icon"><i class="fas fa-landmark"></i></div>
+                  Home</a>
+
+              <div class="sb-sidenav-menu-heading">Ações</div>
+              <a class="nav-link" routerLink="/clientes" routerLinkActive="active" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
+                  ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                  Clientes
+                  <div class="sb-sidenav-collapse-arrow">
+
+                    </div
+              ></a>
+                  <a class="nav-link" routerLink= "/extrato" routerLinkActive="active" ><div class="sb-nav-link-icon"><i class="fas fa-search-dollar"></i></div>
+                    Extrato</a>
+                  <a class="nav-link" routerLink= "/saque" routerLinkActive="active" ><div class="sb-nav-link-icon"><i class="far fa-money-bill-alt"></i></div>
+                    Saque</a>
+                  <a class="nav-link" routerLink= "/deposito" routerLinkActive="active" ><div class="sb-nav-link-icon"><i class="fas fa-piggy-bank"></i></div>
+                    Depositar</a>
+
+
+
+              <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                  <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="layout-static.html">Static Navigation</a><a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a></nav>
+              </div>
+
+
+
+          </div>
+      </div>
+      <div class="sb-sidenav-footer">
+          <div class="small">Logged in as:</div>
+          Meu Banco
+      </div>
+  </nav>
+</div>
