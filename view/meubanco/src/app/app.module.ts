@@ -12,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SaqueComponent } from './pages/saque/saque.component';
 import { LabelInputComponent } from './component/label-input/label-input.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
+import { CadastrarClientesComponent } from './pages/clientes/cadastrar-clientes/cadastrar-clientes.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { ClientesComponent } from './pages/clientes/clientes.component';
     ButtonComponent,
     LabelInputComponent,
     ClientesComponent,
+    CadastrarClientesComponent,
 
 
   ],
