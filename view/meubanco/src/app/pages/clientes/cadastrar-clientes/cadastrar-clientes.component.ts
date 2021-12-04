@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {  FormBuilder, Validators } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms'
+import { Router } from '@angular/router';
+import { ICliente } from 'src/app/interfaces/cliente';
+import { ClientService } from 'src/app/services/client.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastrar-clientes',
@@ -17,11 +21,11 @@ export class CadastrarClientesComponent implements OnInit {
 
   nomeInvalido!: Boolean
 
-  constructor(form: FormBuilder) {
+  constructor(form: FormBuilder, private clientService: ClientService, private router: Router ) {
 
     this.myForm = form.group({
       nome: new FormControl('',[Validators.required]),
-      email: new FormControl('',[Validators.required]),
+      email: new FormControl('',[Validators.required, Validators.email]),
       cpf: new FormControl('',[Validators.required, Validators.maxLength(11), Validators.minLength(11)]),
       observacoes: new FormControl('',),
       ativo: new FormControl(true),
@@ -30,6 +34,7 @@ export class CadastrarClientesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
 
@@ -40,32 +45,19 @@ export class CadastrarClientesComponent implements OnInit {
     }
   }
 
-  verificaCpf(){
-    if(!this.myForm.get('cpf')?.valid){
-      this.cpfInvalido = true
-      this.success = false
-    }
-  }
-
-  verificaNome(){
-    if(!this.myForm.get('nome')?.valid){
-      this.nomeInvalido = true
-      this.success = false
-    }
-  }
-
   onSubmit() {
-    if(this.myForm.valid){
-      alert(`Nome: ${this.myForm?.get('nome')?.value}\nCPF: ${this.myForm?.get('cpf')?.value}\nObservasões: ${this.myForm?.get('observacoes')?.value}\nativo: ${this.myForm?.get('ativo')?.value}`)
-      this.success = true
-      this.cpfInvalido = false
-      this.nomeInvalido = false
+      const cliente: ICliente = this.myForm.value
+      this.clientService.cadastrar(cliente).subscribe(clienteApi =>{
+        Swal.fire("Funfou!", "Cadastro com sucesso!","success")
+        console.log(clienteApi)
+        this.router.navigate(['/'])
+      },error =>{
+        console.log(error)
+      })
       this.myForm.reset()
 
 
-    }else{
-      alert("Preencha os campos obrigatórios!")
-    }
 
   }
+
 }
