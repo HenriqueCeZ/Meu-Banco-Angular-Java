@@ -8,30 +8,8 @@
 
 
 
+
 <form  [formGroup]="myForm" (ngSubmit)="onSubmit()">
-
-  <div class="row ">
-
-    <div class="col-md-8 ">
-
-      <div class="alert alert-danger " role="alert" *ngIf="cpfInvalido == true">
-        CPF inválido!
-
-      </div>
-
-    </div>
-
-    <div class="col-md-8 ">
-
-      <div class="alert alert-danger " role="alert" *ngIf="nomeInvalido == true">
-
-        Nome obrigatório!
-
-       </div>
-
-    </div>
-
-  </div>
 
     <div class="col-md-8">
 
@@ -95,9 +73,7 @@
 
       <button type="submit"
       class="btn btn-dark p-2 bd-highlight mb-4"
-      (click)="convertCpf()"
-      (click)="verificaCpf()"
-      (click)="verificaNome()">
+      [disabled]="!myForm.valid">
 
       <i class="fa fa-save"></i>Cadastrar
 
