@@ -17,13 +17,6 @@
   <br>
 
   <div class="container">
-    <div class="row d-flex d-flex justify-content-end ">
-        <div class="col-md-2 d-flex align-items-end ">
-            <button *ngIf="contas.length" class="btn btn-dark ml-auto p-2 bd-highlight " routerLinkActive="active"><i class="fa fa-plus"></i>Novo</button>
-        </div>
-    </div>
-    <br>
-
   <div class="row">
     <div class="col-md-12">
           <table class= "table table-condensed table-hover  " *ngIf="contas.length">
@@ -41,7 +34,7 @@
                 <td>{{conta.cliente.nome}}</td>
                 <td>{{conta.agencia}}</td>
                 <td>{{conta.numero}}</td>
-                <td>{{conta.saldo}}</td>
+                <td>{{conta.saldo | currency: 'BRL'}}</td>
 
               </tr>
 
