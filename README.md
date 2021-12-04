@@ -31,6 +31,8 @@ Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcian
 [✔] Fazer os Routes entre as telas<br>
 [✔] Criar o Footer<br>
 [✔] Criar a view de extrato<br>
+[✔] Criar a view de depósito<br>
+[✔] Criar a view de saque<br>
 [✔] Criar a view de listagem de contas<br>
 [✔] Criar a view de listagem de contas<br>
 [✔] Criar a view de listagem de clientes<br>
