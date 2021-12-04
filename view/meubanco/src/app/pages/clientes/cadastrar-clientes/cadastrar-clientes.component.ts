@@ -8,11 +8,17 @@ import { FormControl, FormGroup } from '@angular/forms'
   styleUrls: ['./cadastrar-clientes.component.css']
 })
 export class CadastrarClientesComponent implements OnInit {
+
   myForm!: FormGroup;
+
   success!: Boolean;
+
   cpfInvalido!: Boolean
+
   nomeInvalido!: Boolean
+
   constructor(form: FormBuilder) {
+
     this.myForm = form.group({
       nome: new FormControl('',[Validators.required]),
       cpf: new FormControl('',[Validators.required, Validators.maxLength(11), Validators.minLength(11)]),
@@ -20,21 +26,17 @@ export class CadastrarClientesComponent implements OnInit {
       ativo: new FormControl(false),
     });
 
-
   }
 
   ngOnInit(): void {
-
-    ;
   }
 
-  get nome() { return this.myForm.get('nome'); }
+
   convertCpf(){
     if(this.myForm){
      let convert = this.myForm?.get('cpf')?.value.replace(/\.|\-/g, '');
      this.myForm?.get('cpf')?.setValue(convert)
-  }
-
+    }
   }
 
   verificaCpf(){
@@ -61,10 +63,8 @@ export class CadastrarClientesComponent implements OnInit {
 
 
     }else{
-      alert("Preencha os campos corretamente!")
+      alert("Preencha os campos obrigatórios!")
     }
 
-
-
-}
   }
+}
