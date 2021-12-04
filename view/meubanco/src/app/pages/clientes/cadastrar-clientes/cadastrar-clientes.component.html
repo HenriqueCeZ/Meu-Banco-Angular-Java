@@ -1,41 +1,43 @@
 <ol class=" mb-4">
   <h2 class="breadcrumb-item active">Cadastro de clientes</h2>
 </ol>
-<div class="container">
 
-<form action=""  #clientForm="ngForm" (ngSubmit)="onSubmit()">
+<div class="container">
+<form  #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
 
     <div class="col-md-8">
       <div class="form-group">
         <label for="">Nome: *</label>
-        <input type="text" class="form-control" name="nome" [(ngModel)]="cliente.nome" >
+        <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome" >
       </div>
     </div>
+
     <div class="col-md-8">
       <div class="form-group">
         <label for="">CPF: *</label>
         <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf" >
       </div>
     </div>
+
     <div class="col-md-8">
       <div class="form-group">
-        <label for="">Observações:</label>
-        <input type="text" class="form-control" [(ngModel)]="cliente.observacoes" name="Observações">
+          <label for="">Observações:</label>
+          <textarea type="text" class="form-control" [(ngModel)]="cliente.observacoes" name="observacoes"></textarea>
       </div>
 
+      <div class="col-md-8">
       <div class="form-group">
         <div class="form-check">
-          <div>
-            <input class="form-check-input" type="checkbox" id="gridCheck" id="ativo" name="ativo" [(ngModel)]="cliente.ativo" >
-            <label for="status">Ativo</label>
+            <input class="form-check-input " type="checkbox" id="gridCheck" id="ativo" name="ativo" [(ngModel)]="cliente.ativo" >
+            <label  for="status">Ativo *</label>
           </div>
-
         </div>
-      </div>
+     </div>
     </div>
-  <div class="row d-flex justify-content-end">
-    <div >
-      <button type="submit" class="btn btn-dark"  ><i class="fa fa-save"></i>Cadastrar</button>
+
+  <div class="col-md-8">
+    <div class="d-flex justify-content-end" >
+      <button type="submit" class="btn btn-dark p-2 bd-highlight"  ><i class="fa fa-save"></i>Cadastrar</button>
     </div>
   </div>
 </form>
