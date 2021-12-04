@@ -1,19 +1,20 @@
-<h2>Saque</h2>
-
-<div class="row">
-  <div class="col">
-  <app-label-input type="text" label="Conta:"></app-label-input>
-  </div>
-
-  <div class="col">
-  <app-label-input type="text" label="Agência:"></app-label-input>
-  </div>
-
-  <div class="col">
-  <app-label-input type="text" label="Valor:"></app-label-input>
-  </div>
-
-  <app-check-box label="Aceito os termos de uso"></app-check-box>
-  <app-button button="Enviar"></app-button>
+<h1>Saque</h1>
+<small>{{ formGroup.value | json}}</small>
+<div class="row mb-3">
+  <form [formGroup]="formGroup" (ngSubmit)="sacar()">
+    <div class="col">
+      <label>Agência</label>
+      <input type="text" class="form-control" formControlName="agencia">
+    </div>
+    <div class="col">
+      <label>Número da Conta</label>
+      <input type="text" class="form-control" formControlName="numeroConta">
+    </div>
+    <div class="col">
+      <label>Valor</label>
+      <input type="text" class="form-control" formControlName="valor">
+    </div>
+  </form>
 </div>
 
+<a href="#" class="btn btn-primary">Sacar</a>
