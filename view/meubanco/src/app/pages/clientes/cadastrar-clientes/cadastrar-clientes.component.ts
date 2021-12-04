@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  FormBuilder, NgForm, Validators } from '@angular/forms';
+import {  FormBuilder, Validators } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms'
 
 @Component({
@@ -21,9 +21,10 @@ export class CadastrarClientesComponent implements OnInit {
 
     this.myForm = form.group({
       nome: new FormControl('',[Validators.required]),
+      email: new FormControl('',[Validators.required]),
       cpf: new FormControl('',[Validators.required, Validators.maxLength(11), Validators.minLength(11)]),
-      observacoes: new FormControl('', [Validators.required, Validators.maxLength(150)]),
-      ativo: new FormControl(false),
+      observacoes: new FormControl('',),
+      ativo: new FormControl(true),
     });
 
   }
