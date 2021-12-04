@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, NgForm } from '@angular/forms';
+import {  NgForm } from '@angular/forms';
 import { Cliente } from '../clientes';
 
 
@@ -12,16 +12,11 @@ export class CadastrarClientesComponent implements OnInit {
 
   cliente!: Cliente ;
 
-
-
-
   constructor() {
     this.cliente = new Cliente();
   }
 
   ngOnInit(): void {
-
-
   }
 
   onSubmit(f: NgForm): void {
@@ -32,8 +27,5 @@ export class CadastrarClientesComponent implements OnInit {
     }else{
       alert("Preencha os campos obrigatórios")
     }
-
   }
-
-
 }
