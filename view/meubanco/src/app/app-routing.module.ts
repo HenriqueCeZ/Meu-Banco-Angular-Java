@@ -6,6 +6,7 @@ import { ExtratoComponent } from './pages/extrato/extrato.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SaqueComponent } from './pages/saque/saque.component';
 import { CadastrarClientesComponent } from './pages/clientes/cadastrar-clientes/cadastrar-clientes.component';
+import { ContasComponent } from './pages/contas/contas.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent, pathMatch: "full"},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'deposito', component:DepositoComponent, pathMatch: "full"},
   {path: 'saque', component:SaqueComponent, pathMatch: "full"},
   {path: 'clientes', component:ClientesComponent, pathMatch: "full"},
+  {path: 'contas', component:ContasComponent, pathMatch: "full"},
   {path: 'cadastrar', component:CadastrarClientesComponent, pathMatch: "full"}
 ];
 
