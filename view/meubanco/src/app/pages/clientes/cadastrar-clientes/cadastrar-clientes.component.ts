@@ -53,7 +53,7 @@ export class CadastrarClientesComponent implements OnInit {
 
   onSubmit() {
     if(this.myForm.valid){
-      alert(`Nome: ${this.myForm?.get('nome')?.value}\ncpf: ${this.myForm?.get('CPF')?.value}\nObservasões: ${this.myForm?.get('observacoes')?.value}\nativo: ${this.myForm?.get('ativo')?.value}`)
+      alert(`Nome: ${this.myForm?.get('nome')?.value}\nCPF: ${this.myForm?.get('cpf')?.value}\nObservasões: ${this.myForm?.get('observacoes')?.value}\nativo: ${this.myForm?.get('ativo')?.value}`)
       this.success = true
       this.cpfInvalido = false
       this.nomeInvalido = false
