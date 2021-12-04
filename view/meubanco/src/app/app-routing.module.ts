@@ -15,7 +15,8 @@ const routes: Routes = [
   {path: 'saque', component:SaqueComponent, pathMatch: "full"},
   {path: 'clientes', component:ClientesComponent, pathMatch: "full"},
   {path: 'contas', component:ContasComponent, pathMatch: "full"},
-  {path: 'cadastrar', component:CadastrarClientesComponent, pathMatch: "full"}
+  {path: 'clientes/cadastrar', component:CadastrarClientesComponent, pathMatch: "full"},
+  {path: 'clientes/editar/:id', component:CadastrarClientesComponent, pathMatch: "full"}
 ];
 
 @NgModule({
