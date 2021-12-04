@@ -3,33 +3,49 @@
 </ol>
 
 <div class="container">
-<form  #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+<form  [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div class="row ">
+    <div class="col-md-8 ">
+      <div class="alert alert-danger " role="alert" *ngIf="cpfInvalido == true">
+        CPF inválido!
+      </div>
+
+    </div>
+    <div class="col-md-8 ">
+      <div class="alert alert-danger " role="alert" *ngIf="nomeInvalido == true">
+        Nome obrigatório!
+       </div>
+    </div>
+  </div>
+
 
     <div class="col-md-8">
       <div class="form-group">
         <label for="">Nome: *</label>
-        <input type="text" class="form-control" [(ngModel)]="cliente.nome" name="nome" >
+        <input type="text" class="form-control" formControlName="nome" required >
       </div>
     </div>
 
-    <div class="col-md-8">
+    <div class="col-md-8 ">
       <div class="form-group">
+        <div>
         <label for="">CPF: *</label>
-        <input type="text" class="form-control" [(ngModel)]="cliente.cpf" name="cpf" >
+        <input type="text" class="form-control" formControlName="cpf" id="cpf" required >
+        </div>
       </div>
     </div>
 
     <div class="col-md-8">
       <div class="form-group">
           <label for="">Observações:</label>
-          <textarea type="text" class="form-control" [(ngModel)]="cliente.observacoes" name="observacoes"></textarea>
+          <textarea type="text" class="form-control" formControlName="observacoes" ></textarea>
       </div>
 
       <div class="col-md-8">
       <div class="form-group">
         <div class="form-check">
-            <input class="form-check-input " type="checkbox" id="gridCheck" id="ativo" name="ativo" [(ngModel)]="cliente.ativo" >
-            <label  for="status">Ativo *</label>
+            <input class="form-check-input " type="checkbox" id="gridCheck" id="ativo"  formControlName="ativo" >
+            <label  for="status">Ativo</label>
           </div>
         </div>
      </div>
@@ -37,7 +53,14 @@
 
   <div class="col-md-8">
     <div class="d-flex justify-content-end" >
-      <button type="submit" class="btn btn-dark p-2 bd-highlight"  ><i class="fa fa-save"></i>Cadastrar</button>
+      <button type="submit" class="btn btn-dark p-2 bd-highlight mb-4" (click)="convertCpf()" (click)="verificaCpf()"  (click)="verificaNome()"><i class="fa fa-save"></i>Cadastrar</button>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="col-md-8 ">
+      <div class="alert alert-success " role="alert" *ngIf="success == true">
+        Cliente cadastrado com sucesso!
+      </div>
     </div>
   </div>
 </form>
