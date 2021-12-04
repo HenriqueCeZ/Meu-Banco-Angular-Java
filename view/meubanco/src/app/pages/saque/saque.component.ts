@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-saque',
@@ -7,13 +8,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SaqueComponent implements OnInit {
 
-  @Input()
-  titulo: string = 'Meu título';
-  exibir: boolean = true;
+  formGroup: FormGroup = new FormGroup({
+    agencia: new FormControl('', Validators.required),
+    numeroConta: new FormControl('', Validators.required),
+    valor: new FormControl('', Validators.required),
+  });
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  sacar() {
+
   }
 
 }
