@@ -14,6 +14,8 @@ import { LabelInputComponent } from './component/label-input/label-input.compone
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { CadastrarClientesComponent } from './pages/clientes/cadastrar-clientes/cadastrar-clientes.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ContasComponent } from './pages/contas/contas.component';
 
 
 
@@ -31,7 +33,8 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
     LabelInputComponent,
     ClientesComponent,
     CadastrarClientesComponent,
-    SidebarComponent
+    SidebarComponent,
+    ContasComponent
 
 
 
@@ -41,6 +44,7 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [],
