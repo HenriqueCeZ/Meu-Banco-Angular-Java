@@ -34,7 +34,7 @@ Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcian
 [✔] Criar a view de depósito<br>
 [✔] Criar a view de saque<br>
 [✔] Criar a view de listagem de contas<br>
-[✔] Criar a view de listagem de contas<br>
+[✔] Criar a view de edição de contas<br>
 [✔] Criar a view de listagem de clientes<br>
 [] Criar a view inicial<br>
 [] Consumo de API spring<br>
