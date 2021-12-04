@@ -27,19 +27,32 @@ Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcian
  
 [✔] Criar NavBar<br>
 [✔] Criar SideBar<br>
-[✔] Criar tela de cadastro de um novo Cliente<br>
+[✔] Criar view de cadastro de um novo Cliente<br>
 [✔] Fazer os Routes entre as telas<br>
 [✔] Criar o Footer<br>
-[] Criar a tela inicial<br>
-[] Criar a tela de extrato<br>
-[] Consumir a API de Clientes<br>
+[✔] Criar a view de extrato<br>
+[✔] Criar a view de listagem de contas<br>
+[✔] Criar a view de listagem de contas<br>
+[✔] Criar a view de listagem de clientes<br>
+[] Criar a view inicial<br>
+[] Consumo de API spring<br>
+ 
 
  
 </i>
 
 
  ## Objetivos do Beck-end 
-[] Criar API clientes<br>
+[] Criar API REST Spring <br>
+[] Cadastrar Clientes<br>
+[] Listar Clientes<br>
+[] Atualizar Clientes<br>
+[] Deletar Clientes<br>
+[] Cadastrar Contas<br>
+[] Listar Contas<br>
+[] Atualizar Contas<br>
+[] Deletar Contas<br>
+
 
 
 
