@@ -1,0 +1,52 @@
+<h1 class="mt-4">Contas</h1>
+
+
+
+<h3 class="breadcrumb-item active">Listagem de Contas</h3>
+
+<div *ngIf="!contas.length">
+  <div class="spinner-grow text-dark d-flex pl-15" role="status">
+
+    <h1 class="ml-5 pl-15 mb-20 ">Carregando...</h1>
+  </div>
+
+</div>
+
+<div class="container">
+
+  <br>
+
+  <div class="container">
+    <div class="row d-flex d-flex justify-content-end ">
+        <div class="col-md-2 d-flex align-items-end ">
+            <button *ngIf="contas.length" class="btn btn-dark ml-auto p-2 bd-highlight " routerLinkActive="active"><i class="fa fa-plus"></i>Novo</button>
+        </div>
+    </div>
+    <br>
+
+  <div class="row">
+    <div class="col-md-12">
+          <table class= "table table-condensed table-hover  " *ngIf="contas.length">
+            <thead>
+              <tr>
+                <th scope="col">Nome do Cliente</th>
+                <th scope="col">Número da Conta</th>
+                <th scope="col">Agência</th>
+                <th scope="col">Saldo</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor = "let conta of contas">
+                <td>{{conta.cliente.nome}}</td>
+                <td>{{conta.agencia}}</td>
+                <td>{{conta.numero}}</td>
+                <td>{{conta.saldo}}</td>
+
+              </tr>
+
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
