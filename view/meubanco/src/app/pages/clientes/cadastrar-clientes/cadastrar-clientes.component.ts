@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {  FormBuilder, Validators } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms'
-import { Router } from '@angular/router';
-import { ICliente } from 'src/app/interfaces/cliente';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ICliente} from 'src/app/interfaces/cliente';
 import { ClientService } from 'src/app/services/client.service';
 import Swal from 'sweetalert2';
+import { Cliente } from './cliente';
 
 @Component({
   selector: 'app-cadastrar-clientes',
@@ -20,8 +21,11 @@ export class CadastrarClientesComponent implements OnInit {
   cpfInvalido!: Boolean
 
   nomeInvalido!: Boolean
+  id!: number
 
-  constructor(form: FormBuilder, private clientService: ClientService, private router: Router ) {
+  client!: Cliente;
+
+  constructor(form: FormBuilder, private clientService: ClientService, private router: Router, private activatedRoute: ActivatedRoute) {
 
     this.myForm = form.group({
       nome: new FormControl('',[Validators.required]),
@@ -31,12 +35,25 @@ export class CadastrarClientesComponent implements OnInit {
       ativo: new FormControl(true),
     });
 
+    this.client = new Cliente();
+
   }
 
   ngOnInit(): void {
 
-  }
+    this.activatedRoute.params.subscribe(params => {
+      return this.id = params['id']
 
+  });
+
+
+  if(this.id){
+    this.clientService.getClientById(this.id)
+    .subscribe(response => this.client = response,
+     errorResponse => this.client = new Cliente())
+
+  }
+}
 
   convertCpf(){
     if(this.myForm){
@@ -46,18 +63,32 @@ export class CadastrarClientesComponent implements OnInit {
   }
 
   onSubmit() {
+
+    if(this.id){
+
+      this.clientService.atualizar(this.client).subscribe(response =>{
+        console.log(this.client.id)
+
+      })
+
+    }else{
       const cliente: ICliente = this.myForm.value
       this.clientService.cadastrar(cliente).subscribe(clienteApi =>{
-        Swal.fire("Funfou!", "Cadastro com sucesso!","success")
+        Swal.fire("Cadastro realizado!", "novo cliente adicionado!","success")
         console.log(clienteApi)
         this.router.navigate(['/'])
       },error =>{
         console.log(error)
       })
       this.myForm.reset()
-
+    }
 
 
   }
 
+  voltarListagem(){
+    this.router.navigate(['/client'])
+  }
 }
+
+
