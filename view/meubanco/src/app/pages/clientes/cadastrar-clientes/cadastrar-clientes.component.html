@@ -1,8 +1,7 @@
 <div class="container">
 
 <ol class=" mb-4">
-
-  <h2 class="breadcrumb-item active">Cadastro de clientes</h2>
+  <h2 class="breadcrumb-item active">{{ id? 'Edição' : 'Cadastro' }}</h2>
 
 </ol>
 
@@ -11,77 +10,77 @@
 
 <form  [formGroup]="myForm" (ngSubmit)="onSubmit()">
 
+      <div class="col-md-8">
+
+        <div class="form-group">
+
+          <label for="">Nome: *</label>
+
+          <input type="text" class="form-control" formControlName="nome" required>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-8">
+
+        <div class="form-group">
+
+          <label for="">Email: *</label>
+
+          <input type="email" class="form-control" formControlName="email" required>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-8 ">
+
+        <div class="form-group">
+
+          <label for="">CPF: *</label>
+
+          <input type="text" class="form-control" formControlName="cpf" id="cpf" required >
+
+        </div>
+
+      </div>
+
+      <div class="col-md-8">
+
+        <div class="form-group">
+
+            <label for="">Observações:</label>
+
+            <textarea type="text" class="form-control" formControlName="observacoes" ></textarea>
+
+        </div>
+
+
+      </div>
+      <div class="col-md-8">
+        <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input " type="checkbox" id="gridCheck" id="ativo" formControlName="ativo" >
+        <label  for="status">Ativo</label>
+      </div>
+    </div>
+    </div>
     <div class="col-md-8">
 
-      <div class="form-group">
+      <div class="d-flex justify-content-end" >
 
-        <label for="">Nome: *</label>
+        <button type="submit"
+        class="btn btn-dark p-2 bd-highlight mb-4"
+        [disabled]="!myForm.valid">
 
-        <input type="text" class="form-control" formControlName="nome" required>
+        <i class="fa fa-save"></i>Cadastrar
+
+          </button>
 
       </div>
 
     </div>
-
-    <div class="col-md-8">
-
-      <div class="form-group">
-
-        <label for="">Email: *</label>
-
-        <input type="email" class="form-control" formControlName="email" required>
-
-      </div>
-
-    </div>
-
-    <div class="col-md-8 ">
-
-      <div class="form-group">
-
-        <label for="">CPF: *</label>
-
-        <input type="text" class="form-control" formControlName="cpf" id="cpf" required >
-
-      </div>
-
-    </div>
-
-    <div class="col-md-8">
-
-      <div class="form-group">
-
-          <label for="">Observações:</label>
-
-          <textarea type="text" class="form-control" formControlName="observacoes" ></textarea>
-
-      </div>
-
-
-    </div>
-    <div class="col-md-8">
-      <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input " type="checkbox" id="gridCheck" id="ativo" formControlName="ativo" >
-      <label  for="status">Ativo</label>
-    </div>
-  </div>
-  </div>
-  <div class="col-md-8">
-
-    <div class="d-flex justify-content-end" >
-
-      <button type="submit"
-      class="btn btn-dark p-2 bd-highlight mb-4"
-      [disabled]="!myForm.valid">
-
-      <i class="fa fa-save"></i>Cadastrar
-
-        </button>
-
-    </div>
-
-  </div>
   <div class="row ">
 
     <div class="col-md-8 ">
@@ -97,5 +96,5 @@
   </div>
 
 </form>
-
+<button type="button" class="btn btn-danger bottom-0 " (click)="voltarListagem()" ><i class="fa fa-arrow-alt-circle-left"></i>Voltar</button>
 </div>
