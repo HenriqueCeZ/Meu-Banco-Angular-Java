@@ -16,6 +16,8 @@ import { CadastrarClientesComponent } from './pages/clientes/cadastrar-clientes/
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContasComponent } from './pages/contas/contas.component';
+import { TransferenciaComponent } from './pages/transferencia/transferencia.component';
+import { CadastrarContasComponent } from './pages/contas/cadastrar-contas/cadastrar-contas.component';
 
 
 
@@ -34,7 +36,9 @@ import { ContasComponent } from './pages/contas/contas.component';
     ClientesComponent,
     CadastrarClientesComponent,
     SidebarComponent,
-    ContasComponent
+    ContasComponent,
+    TransferenciaComponent,
+    CadastrarContasComponent
 
 
 
