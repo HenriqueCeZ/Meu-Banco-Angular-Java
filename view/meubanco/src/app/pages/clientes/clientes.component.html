@@ -20,37 +20,40 @@
   </div>
   <br>
 
-  <div class="row">
-    <div class="col-md-12">
-          <table class= "table table-condensed table-hover  " *ngIf="clientes.length">
-            <thead>
-              <tr>
-                <th scope="col">ID</th>
-                <th scope="col">CPF</th>
-                <th scope="col">Nome</th>
-                <th scope="col">E-mail</th>
-                <th scope="col">Observações</th>
-                <th scope="col">Ativo</th>
-                <th scope="col">Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor = "let cliente of clientes">
-                <td>{{cliente.id}}</td>
-                <td>{{cliente.cpf}}</td>
-                <td>{{cliente.nome}}</td>
-                <td>{{cliente.email}}</td>
-                <td>{{cliente.observacoes}}</td>
-                <td>
-                  <i *ngIf="cliente.ativo" class="fas fa-thumbs-up text-success"></i>
-                  <i *ngIf="!cliente.ativo" class="fas fa-thumbs-down text-danger"></i>
-                </td>
+<table *ngIf="clientes.length" class="table table-condensed table-hover ">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Observações</th>
+      <th scope="col">Status</th>
+      <th class="text-center" >Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes;">
+      <td>{{ cliente.nome }}</td>
+      <td>{{ cliente.email }}</td>
+      <td>{{ cliente.cpf }}</td>
+      <td>{{ cliente.observacoes }}</td>
+      <td>
+        <i *ngIf="cliente.ativo" class="fas fa-thumbs-up text-success"></i>
+        <i *ngIf="!cliente.ativo" class="fas fa-thumbs-down text-danger"></i>
+      </td>
+      <td class="d-flex justify-content-center" >
+        <button class="btn btn-dark ml-3"
+        routerLink= "/clientes/editar/{{ cliente.id }}"
+      >  <i class="fa fa-edit"></i>
 
-                <td> <a class=" btn bt-danger" (onclick)="confirmar(cliente.id)">Remover</a> </td>
-              </tr>
+    </button>
 
-            </tbody>
-          </table>
-      </div>
-    </div>
-  </div>
+        <button class="btn btn-danger ml-3"
+        (click)="deletar(cliente.id)"
+      >  <i class="fa fa-trash"></i>
+
+    </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
