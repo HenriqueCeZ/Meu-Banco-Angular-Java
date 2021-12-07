@@ -1,20 +1,30 @@
-<h1>Saque</h1>
-<small>{{ formGroup.value | json}}</small>
-<div class="row mb-3">
-  <form [formGroup]="formGroup" (ngSubmit)="sacar()">
+<h1 class="mt-5 mb-4">Saque</h1>
+
+
+<form [formGroup]="formGroup" class="mb-3" (ngSubmit)="sacar()">
+  <div class="row">
+
     <div class="col">
-      <label>Agência</label>
-      <input type="text" class="form-control" formControlName="agencia">
+      <label for="exampleFormControlInput1" class="form-label">Agencia: <small class="text-danger mb-2" *ngIf="formGroup.get('agencia')?.errors &&
+        formGroup.get('agencia')?.hasError('required')">*</small></label>
+      <input  type="text" class="form-control" autofocus formControlName="agencia">
     </div>
+
     <div class="col">
-      <label>Número da Conta</label>
+      <label for="exampleFormControlInput1" class="form-label">Conta: <small class="text-danger mb-2" *ngIf="formGroup.get('numeroConta')?.errors &&
+        formGroup.get('numeroConta')?.hasError('required')">*</small></label>
       <input type="text" class="form-control" formControlName="numeroConta">
     </div>
-    <div class="col">
-      <label>Valor</label>
-      <input type="text" class="form-control" formControlName="valor">
-    </div>
-  </form>
-</div>
 
-<a href="#" class="btn btn-primary">Sacar</a>
+    <div class="col">
+      <label for="exampleFormControlInput1" class="form-label">Valor: <small class="text-danger mb-2" *ngIf="formGroup.get('valor')?.errors &&
+        formGroup.get('valor')?.hasError('required')">*</small></label>
+      <input type="text" class="form-control" formControlName="valor">
+
+    </div>
+  </div>
+  <div class="d-flex justify-content-end">
+  <button [disabled]="!formGroup.valid" type="submit" class=" mt-4 btn btn-dark text-center "
+    titulo="Cadastrar"> Sacar <i class="fas fa-money-bill-alt "></i></button>
+  </div>
+</form>
