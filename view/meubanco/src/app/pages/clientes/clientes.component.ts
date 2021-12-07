@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 export class ClientesComponent implements OnInit {
   clientes: ICliente[] = []
 
-  constructor(private clientService: ClientService) {
+  constructor(private clienteService: ClientService) {
 
 
    }
@@ -22,33 +22,43 @@ export class ClientesComponent implements OnInit {
   }
 
   listarTodosClientes(){
-    this.clientService.listarTodosClientes().subscribe(clientesApi =>{
+    this.clienteService.listarTodosClientes().subscribe(clientesApi =>{
       this.clientes =  clientesApi
     })
   }
 
 
-  confirmar(id: number) {
+  deletar(id: number) {
     Swal.fire({
-      title: 'Você quer deletar?',
-      text: "Isso não vai voltar mais nunca, quer mesmo?",
+      title: 'Você tem certeza que deseja deletar?',
+      text: "Não tem como reverter essa ação",
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Vai logo'
+      confirmButtonColor: 'red',
+      cancelButtonColor: 'grey',
+      confirmButtonText: 'Deletar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.clientService.remover(id).subscribe(result => {
+        this.clienteService.remover(id).subscribe(clientesApi => {
           Swal.fire(
-            'Removido!',
-            'Seu cliente foi removido com sucesso!',
+            'Deletado',
+            'Cliente deletado com sucesso',
             'success'
           );
-          this.listarTodosClientes();
+          this.listarTodosClientes()
+          console.log(id)
         }, error => {
-          console.error(error);
-        });
+          console.error(error)
+        })
+
       }
     })
   }
+
 }
+
+
+
+
+
 
