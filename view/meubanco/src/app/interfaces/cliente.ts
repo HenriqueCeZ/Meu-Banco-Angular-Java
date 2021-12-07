@@ -1,10 +1,9 @@
 export interface ICliente {
+    id: number;
+    nome: string;
+    cpf: string;
+    email: string;
+    observacoes: string;
+    ativo?: boolean;
+  }
 
-    id: number,
-    nome: string,
-    email: string,
-    cpf: string,
-    observacoes: string,
-    ativo?: boolean
-
-}
