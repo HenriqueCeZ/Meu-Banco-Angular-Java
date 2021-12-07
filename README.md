@@ -33,11 +33,23 @@ Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcian
 [✔] Criar a view de extrato<br>
 [✔] Criar a view de depósito<br>
 [✔] Criar a view de saque<br>
+[✔] Criar a view de transferência<br>
 [✔] Criar a view de listagem de contas<br>
 [✔] Criar a view de edição de contas<br>
 [✔] Criar a view de listagem de clientes<br>
-[] Criar a view inicial<br>
-[] Consumo de API spring<br>
+[✔] Criar método de transferência de contas<br>
+[✔] Criar método de saque de contas<br>
+[✔] Criar método de depósito de contas<br>
+[✔] Implementar o DELETE de clientes<br>
+[✔] Implementar o GET de clientes<br>
+[✔] Implementar o POST de clientes<br>
+[] Implementar o PUT de clientes<br>
+[] Implementar o POST de contas<br>
+[] Implementar o GET de contas<br> 
+[] Implementar o DELETE de contas<br> 
+[] Implementar o PUT de contas<br> 
+[] Criar a view HOME<br>
+
  
 
  
