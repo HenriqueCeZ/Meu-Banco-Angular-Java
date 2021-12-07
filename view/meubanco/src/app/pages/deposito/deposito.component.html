@@ -1,17 +1,28 @@
-<h2>Depositar</h2>
-<div class="row">
-  <div class="col">
-  <app-label-input type="text" label="Conta:"></app-label-input>
-  </div>
+<h1 class="mt-5 mb-4">Deposito</h1>
 
-  <div class="col">
-  <app-label-input type="text" label="Agência:"></app-label-input>
-  </div>
 
-  <div class="col">
-  <app-label-input type="text" label="Valor:"></app-label-input>
-  </div>
+<form [formGroup]="formGroup" class="mb-3" (ngSubmit)="depositar()">
+  <div class="row">
+    <div class="col">
+      <label for="exampleFormControlInput1" class="form-label">Agencia: <small class="text-danger mb-2" *ngIf="formGroup.get('agencia')?.errors &&
+        formGroup.get('agencia')?.hasError('required')">*</small></label>
+      <input  type="text" class="form-control" autofocus formControlName="agencia">
+    </div>
+    <div class="col">
+      <label for="exampleFormControlInput1" class="form-label">Conta: <small class="text-danger mb-2" *ngIf="formGroup.get('numeroConta')?.errors &&
+        formGroup.get('numeroConta')?.hasError('required')">*</small></label>
+      <input type="text" class="form-control" formControlName="numeroConta">
+    </div>
 
-  <app-check-box label="Aceito os termos de uso"></app-check-box>
-  <app-button button="Enviar"></app-button>
-</div>
+    <div class="col">
+      <label for="exampleFormControlInput1" class="form-label">Valor: <small class="text-danger mb-2" *ngIf="formGroup.get('valor')?.errors &&
+        formGroup.get('valor')?.hasError('required')">*</small></label>
+      <input type="text" class="form-control" formControlName="valor">
+
+    </div>
+  </div>
+  <div class="d-flex justify-content-end">
+  <button [disabled]="!formGroup.valid" type="submit" class=" mt-4 btn btn-dark "
+    titulo="Cadastrar">Depositar <i class="fas fa-money-bill-alt "></i> </button>
+  </div>
+</form>
