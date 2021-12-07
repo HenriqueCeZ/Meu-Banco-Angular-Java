@@ -16,13 +16,36 @@ Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcian
 ## Objetivo do projeto 
 <i>
     
- * construir um Front em Angular para consumir uma API feita em Spring-boot!
+* Construir um Front em Angular para consumir uma API feita em Spring-boot!
+ 
+* O objetivo é construir um Front para consumir uma API feita com spring!
+
+* O usuário se cadastra e seus dados ficam salvos
+
+* A aplicação recebe uma listagem de clientes e contas disponíveis
+
+* O usuário pode criar adicionar novos clientes
+
+* O usuário pode alterar os dados de clientes
+
+* O usuário pode deletar os dados de clientes
+
+* O usuário pode criar novas contas
+
+* O usuário pode transferir dinheiro entre as contas
+
+* O usuário pode realizar saque das contas
+
+* O usuário pode realizar deposito das contas
 
 
 
 </i>
 
-## Objetivos do Front-end<br> 
+
+
+
+## Funcionalidades do Front-end<br> 
 <i>
  
 [✔] Criar NavBar<br>
@@ -40,15 +63,9 @@ Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcian
 [✔] Criar método de transferência de contas<br>
 [✔] Criar método de saque de contas<br>
 [✔] Criar método de depósito de contas<br>
-[✔] Implementar o DELETE de clientes<br>
-[✔] Implementar o GET de clientes<br>
-[✔] Implementar o POST de clientes<br>
-[] Implementar o PUT de clientes<br>
-[] Implementar o POST de contas<br>
-[] Implementar o GET de contas<br> 
-[] Implementar o DELETE de contas<br> 
-[] Implementar o PUT de contas<br> 
-[] Criar a view HOME<br>
+[✔] Consumir Api Clientes<br>
+[✔] Consumir Api Contas<br>
+[✔] Criar a view HOME<br>
 
  
 
@@ -56,7 +73,7 @@ Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcian
 </i>
 
 
- ## Objetivos do Beck-end 
+ ## Funcionalidades do Front-end 
 [] Criar API REST Spring <br>
 [] Cadastrar Clientes<br>
 [] Listar Clientes<br>
