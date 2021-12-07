@@ -13,7 +13,11 @@
 </div>
 
 <div class="container">
-
+  <div class="row d-flex d-flex justify-content-end ">
+    <div class="col-md-2 d-flex align-items-end ">
+        <button *ngIf="contas.length" class="btn btn-dark ml-auto p-2 bd-highlight  " routerLink="/contas/cadastrar" routerLinkActive="active"><i class=" fa fa-plus" ></i>Novo</button>
+    </div>
+</div>
   <br>
 
   <div class="container">
@@ -23,8 +27,8 @@
             <thead>
               <tr>
                 <th scope="col">Nome do Cliente</th>
-                <th scope="col">Número da Conta</th>
                 <th scope="col">Agência</th>
+                <th scope="col">Número da Conta</th>
                 <th scope="col">Saldo</th>
 
               </tr>
