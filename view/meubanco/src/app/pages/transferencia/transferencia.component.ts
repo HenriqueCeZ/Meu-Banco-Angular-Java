@@ -38,7 +38,7 @@ transferencia() {
   },error =>{
     console.log(error)
   })
-  this.formGroup.reset()
+
 
 
 
