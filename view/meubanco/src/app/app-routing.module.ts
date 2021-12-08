@@ -20,7 +20,8 @@ const routes: Routes = [
   {path: 'transferencia', component:TransferenciaComponent, pathMatch: "full"},
   {path: 'clientes/cadastrar', component:CadastrarClientesComponent, pathMatch: "full"},
   {path: 'contas/cadastrar', component:CadastrarContasComponent, pathMatch: "full"},
-  {path: 'clientes/editar/:id', component:CadastrarClientesComponent, pathMatch: "full"}
+  {path: 'clientes/editar/:id', component:CadastrarClientesComponent, pathMatch: "full"},
+  {path: 'contas/editar/:id', component:CadastrarContasComponent, pathMatch: "full"}
 ];
 
 @NgModule({
