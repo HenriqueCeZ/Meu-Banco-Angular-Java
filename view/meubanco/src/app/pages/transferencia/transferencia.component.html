@@ -1,4 +1,4 @@
-<h1 class="mt-5 mb-4">Transferência</h1>
+<h1 class="mt-5 mb-4 text-secondary ">Transferência</h1>
 
 
 <form [formGroup]="formGroup" class="mb-3" (ngSubmit)="transferencia()">
@@ -38,7 +38,7 @@
 
   </div>
   <div class="d-flex justify-content-end">
-  <button [disabled]="!formGroup.valid" type="submit" class=" mt-4 btn btn-dark text-center "
-    titulo="Cadastrar"> Transferir <i class="fas fa-money-bill-alt "></i></button>
+  <button [disabled]="!formGroup.valid" type="submit" class=" mt-4 btn btn-danger text-center "
+    titulo="transferencia"> Transferir <i class="fas fa-money-bill-alt "></i></button>
   </div>
 </form>
