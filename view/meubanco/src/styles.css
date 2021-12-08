@@ -52,11 +52,14 @@ html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
 }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
+
+
 
 body {
   margin: 0;
@@ -64,9 +67,9 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #fff;
   text-align: left;
-  background-color: #fff;
+  background-color: #212529;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -546,7 +549,10 @@ pre code {
   padding-left: 0.75rem;
   margin-right: auto;
   margin-left: auto;
+
 }
+
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
@@ -574,7 +580,10 @@ pre code {
   padding-left: 0.75rem;
   margin-right: auto;
   margin-left: auto;
+
 }
+
+
 
 @media (min-width: 576px) {
   .container-sm, .container {
@@ -1995,7 +2004,7 @@ pre code {
   font-weight: 400;
   line-height: 1.5;
   color: #495057;
-  background-color: #fff;
+  background-color: #212529 ;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
@@ -2015,8 +2024,8 @@ pre code {
   text-shadow: 0 0 0 #495057;
 }
 .form-control:focus {
-  color: #495057;
-  background-color: #fff;
+  color: #fff;
+  background-color: #333;
   border-color: #80bdff;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
@@ -2663,6 +2672,18 @@ fieldset:disabled a.btn {
 .btn-light:not(:disabled):not(.disabled):active:focus, .btn-light:not(:disabled):not(.disabled).active:focus, .show > .btn-light.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);
 }
+
+.btn-dar {
+  color: #fff;
+  background-color: #212529;
+  border-color: #343a40;
+}
+.btn-dar:hover {
+  color: #fff;
+  background-color: #23272b;
+  border-color: #1d2124;
+}
+
 
 .btn-dark {
   color: #fff;
@@ -4332,7 +4353,7 @@ input[type=button].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: #212529;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -10127,6 +10148,7 @@ body {
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
+  color: #95999c
 }
 .sb-sidenav .sb-sidenav-menu .nav .nav-link {
   display: flex;
@@ -10156,7 +10178,7 @@ body {
 }
 
 .sb-sidenav-dark {
-  background-color: #212529;
+  background-color:  #151d1d;
   color: rgba(255, 255, 255, 0.5);
 }
 .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
@@ -10181,7 +10203,7 @@ body {
   color: #fff;
 }
 .sb-sidenav-dark .sb-sidenav-footer {
-  background-color: #343a40;
+  background-color: #151d1d;
 }
 
 .sb-sidenav-light {
