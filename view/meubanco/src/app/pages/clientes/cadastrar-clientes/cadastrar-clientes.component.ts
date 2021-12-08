@@ -28,11 +28,11 @@ export class CadastrarClientesComponent implements OnInit {
   constructor(form: FormBuilder, private clientService: ClientService, private router: Router, private activatedRoute: ActivatedRoute) {
 
     this.myForm = form.group({
-      nome: new FormControl('',[Validators.required]),
-      email: new FormControl('',[Validators.required, Validators.email]),
-      cpf: new FormControl('',[Validators.required, Validators.maxLength(11), Validators.minLength(11)]),
-      observacoes: new FormControl('',),
-      ativo: new FormControl(true),
+        nome: new FormControl('',[Validators.required]),
+        email: new FormControl('',[Validators.required, Validators.email]),
+        cpf: new FormControl('',[Validators.required, Validators.maxLength(11), Validators.minLength(11)]),
+        observacoes: new FormControl('',),
+        ativo: new FormControl(true),
     });
 
     this.client = new Cliente();
@@ -56,10 +56,10 @@ export class CadastrarClientesComponent implements OnInit {
 }
 
   convertCpf(){
-    if(this.myForm){
+
      let convert = this.myForm?.get('cpf')?.value.replace(/\.|\-/g, '');
      this.myForm?.get('cpf')?.setValue(convert)
-    }
+
   }
 
   onSubmit() {
