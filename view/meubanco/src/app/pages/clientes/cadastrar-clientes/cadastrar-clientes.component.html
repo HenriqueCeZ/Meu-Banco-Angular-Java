@@ -1,7 +1,7 @@
 <div class="container">
 
 <ol class=" mb-4">
-  <h2 class="breadcrumb-item active">{{ id? 'Edição' : 'Cadastro' }}</h2>
+  <h2 class="breadcrumb-item active">{{ id? 'Edit Cliente' : 'Cliente Cadastro' }}</h2>
 
 </ol>
 
@@ -40,7 +40,7 @@
 
           <label for="">CPF: *</label>
 
-          <input type="text" class="form-control" formControlName="cpf" id="cpf" required >
+          <input type="text" class="form-control" (blur)="convertCpf()" formControlName="cpf" id="cpf" required >
 
         </div>
 
@@ -70,31 +70,17 @@
 
       <div class="d-flex justify-content-end" >
 
+
+
         <button type="submit"
-        class="btn btn-dark p-2 bd-highlight mb-4"
+        class="btn btn-danger btn-sm float-right"
         [disabled]="!myForm.valid">
 
         <i class="fa fa-save"></i>Cadastrar
 
           </button>
-
       </div>
-
     </div>
-  <div class="row ">
-
-    <div class="col-md-8 ">
-
-      <div class="alert alert-success " role="alert" *ngIf="success == true">
-
-        Cliente cadastrado com sucesso!
-
-      </div>
-
-    </div>
-
-  </div>
-
 </form>
-<button type="button" class="btn btn-danger bottom-0 " (click)="voltarListagem()" ><i class="fa fa-arrow-alt-circle-left"></i>Voltar</button>
+
 </div>
