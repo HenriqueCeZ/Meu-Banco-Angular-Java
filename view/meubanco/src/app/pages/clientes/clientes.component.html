@@ -1,8 +1,5 @@
-<h1 class="mt-4">Clientes</h1>
 
-
-
-<h3 class="breadcrumb-item active">Listagem de Clientes</h3>
+<h3 class=" mt-4 text-secondary">Lista de Clientes</h3>
 
 <div *ngIf="!clientes.length">
   <div class="spinner-grow text-dark d-flex pl-15" role="status">
@@ -15,14 +12,15 @@
 <div class="container">
   <div class="row d-flex d-flex justify-content-end ">
       <div class="col-md-2 d-flex align-items-end ">
-          <button *ngIf="clientes.length" class="btn btn-dark ml-auto p-2 bd-highlight  " routerLink="/clientes/cadastrar" routerLinkActive="active"><i class=" fa fa-plus" ></i>Novo</button>
+          <button *ngIf="clientes.length" class="btn btn-light btn-sm ml-auto p-2 bd-highlight  " routerLink="/clientes/cadastrar" routerLinkActive="active"><i class=" fa fa-plus" ></i>Adicionar</button>
       </div>
   </div>
   <br>
 
-<table *ngIf="clientes.length" class="table table-condensed table-hover ">
+<table *ngIf="clientes.length" class="table table-dark table-hover ">
   <thead>
     <tr>
+      <th scope="col">ID</th>
       <th scope="col">Nome</th>
       <th scope="col">Email</th>
       <th scope="col">CPF</th>
@@ -33,6 +31,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let cliente of clientes;">
+      <td>{{ cliente.id }}</td>
       <td>{{ cliente.nome }}</td>
       <td>{{ cliente.email }}</td>
       <td>{{ cliente.cpf }}</td>
@@ -42,9 +41,9 @@
         <i *ngIf="!cliente.ativo" class="fas fa-thumbs-down text-danger"></i>
       </td>
       <td class="d-flex justify-content-center" >
-        <button class="btn btn-dark ml-3"
-        routerLink= "/clientes/editar/{{ cliente.id }}"
-      >  <i class="fa fa-edit"></i>
+        <button class="btn btn-dar ml-3" routerLink= "/clientes/editar/{{ cliente.id }}"
+
+      >  <i class="fa fa-edit" ></i>
 
     </button>
 
