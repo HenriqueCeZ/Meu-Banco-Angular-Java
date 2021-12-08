@@ -1,50 +1,88 @@
 import { Component, OnInit } from '@angular/core';
-import {  FormBuilder, Validators } from '@angular/forms';
-import { FormControl, FormGroup } from '@angular/forms'
-import { Router } from '@angular/router';
-import { IContas } from 'src/app/interfaces/contas';
-import { ContasService } from 'src/app/services/contas.service';
 import Swal from 'sweetalert2';
+import { FormBuilder,FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ContasService } from 'src/app/services/contas.service';
+import { Contas } from '../contas';
+
+
+
 @Component({
   selector: 'app-cadastrar-contas',
   templateUrl: './cadastrar-contas.component.html',
   styleUrls: ['./cadastrar-contas.component.css']
 })
-export class CadastrarContasComponent implements OnInit {
-  formGroup: FormGroup = new FormGroup({
-    agencia: new FormControl('', Validators.required),
-    numero: new FormControl('', Validators.required),
-    saldo: new FormControl(0, Validators.required),
-    cliente: new FormGroup({
-      nome: new FormControl('',[Validators.required]),
-      email: new FormControl('',[Validators.required, Validators.email]),
-      cpf: new FormControl('',[Validators.required, Validators.maxLength(11), Validators.minLength(1)]),
-      observacoes: new FormControl('',),
-      ativo: new FormControl(true),
-    }),
-  });
-  errors: any;
+export class CadastrarContasComponent implements OnInit  {
 
-  constructor(private contasService: ContasService, private router: Router) { }
 
-  ngOnInit(): void {
+  form!: FormGroup;
+
+
+  constructor(
+
+    private formBuilder: FormBuilder,
+    public activatedRoute: ActivatedRoute,
+    private contasService: ContasService,
+    public router: Router,
+
+
+  ) {
+
+  }
+
+  ngOnInit() {
+    this.createFormGoup();
+  }
+
+  createFormGoup() {
+    this.form = this.formBuilder.group({
+      agencia             : new FormControl('', [Validators.required]),
+      numero              : new FormControl('', [Validators.required]),
+      saldo               : new FormControl(0, [Validators.required]),
+      nomeCliente         : new FormControl('', ),
+      cpfCliente          : new FormControl('', ),
+      emailCliente        : new FormControl('', ),
+      observacoesCliente  : new FormControl(''),
+      id : new FormControl(),
+
+    });
   }
 
   onSubmit() {
-    const contas: IContas = this.formGroup.value
-    this.contasService.cadastrar(contas).subscribe(clienteApi =>{
+ this.create()
+  }
+
+  create() {
+    const entity = this.formToConta();
+    console.log(entity)
+    this.contasService.create(entity).subscribe(clienteApi =>{
       Swal.fire("Cadastro realizado!", "nova conta criada!","success")
       console.log(clienteApi)
-      this.router.navigate(['/contas'])
-    },error =>{
+      this.router.navigate(['/'])
+       },error =>{
       console.log(error)
-    })
-    this.formGroup.reset()
+     })
+  }
 
+  formToConta(): Contas {
+    const formValue = this.form.value;
+    const entity = new Contas({
+      agencia       : formValue.agencia,
+      numero        : formValue.numero,
+      saldo         : formValue.saldo,
+      cliente: {
+        id          : formValue.id,
+        nome        : formValue.nomeCliente,
+        cpf         : formValue.cpfCliente,
+        email       : formValue.emailCliente,
+        observacoes : formValue.observacoesCliente,
+        ativo       : false,
 
- }
+      }
+    });
+    return entity;
+  }
 
 }
-
 
 
