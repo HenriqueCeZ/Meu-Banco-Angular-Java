@@ -5,7 +5,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ICliente} from 'src/app/interfaces/cliente';
 import { ClientService } from 'src/app/services/client.service';
 import Swal from 'sweetalert2';
-import { Cliente } from './cliente';
+import { Cliente } from '../../../DTO/cliente';
+import * as _ from 'lodash';
+import 'lodash';
+
 
 @Component({
   selector: 'app-cadastrar-clientes',
@@ -25,7 +28,7 @@ export class CadastrarClientesComponent implements OnInit {
 
   client!: Cliente;
 
-  constructor(form: FormBuilder, private clientService: ClientService, private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(form: FormBuilder, private clientService: ClientService, private router: Router,  private route: ActivatedRoute) {
 
     this.myForm = form.group({
         nome: new FormControl('',[Validators.required]),
@@ -40,20 +43,11 @@ export class CadastrarClientesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.activatedRoute.params.subscribe(params => {
-      return this.id = params['id']
-
-  });
-
-
-  if(this.id){
-    this.clientService.getClientById(this.id)
-    .subscribe(response => this.client = response,
-     errorResponse => this.client = new Cliente())
-
+    this.id = this.route.snapshot.params['id'];
+    this.clientService.getClientById(this.id).subscribe((data: Cliente)=>{
+      this.client = data;
+    });
   }
-}
 
   convertCpf(){
 
@@ -67,20 +61,33 @@ export class CadastrarClientesComponent implements OnInit {
     if(this.id){
 
       this.clientService.atualizar(this.client).subscribe(response =>{
-        console.log(this.client.id)
+        Swal.fire("Cliente Atualizado!", "Cliente atualizado com sucesso!","success")
+        this.router.navigate(['/clientes'])
 
+      },error =>{
+        let erro = _.get(error, 'error.detalhes')
+        Swal.fire({
+          icon: 'error',
+          title: 'Erro ao atualizar',
+          text: `${erro}`
+        })
       })
 
     }else{
       const cliente: ICliente = this.myForm.value
       this.clientService.cadastrar(cliente).subscribe(clienteApi =>{
         Swal.fire("Cadastro realizado!", "novo cliente adicionado!","success")
-        console.log(clienteApi)
-        this.router.navigate(['/'])
+
+        this.router.navigate(['/clientes'])
       },error =>{
-        console.log(error)
+        let erro = _.get(error, 'error.detalhes')
+        Swal.fire({
+          icon: 'error',
+          title: 'Erro ao cadastrar',
+          text: `${erro}`
+        })
       })
-      this.myForm.reset()
+
     }
 
 
