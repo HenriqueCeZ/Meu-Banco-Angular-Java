@@ -1,26 +1,37 @@
 <div class="container">
   <div class="row">
     <div class="cal">
-      <h1 class="display-6">
-        Cadastrar nova Conta
-        <i class="fa-solid fa-comments-dollar"></i>
-      </h1>
+      <h2 class="breadcrumb-item active">{{ id? 'Edit Conta' : 'Conta cadastro' }}</h2>
       <hr />
 
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-          <div class="col-md-8">
-            <label class="form-label mt-3">ClienteI:</label>
+          <div class="col-md-8" *ngIf="id">
+            <label class="form-label mt-3">ClienteID:</label>
             <input
+            [(ngModel)]="conta.cliente.id"
               formValuetype="text"
               class="form-control"
-              formControlName="id"
+              formControlName="cliente"
 
             />
+
+          </div>
+          <div class="col-md-8" *ngIf="!id">
+            <label class="form-label mt-3">ClienteID:</label>
+            <input
+            [(ngModel)]="conta.cliente"
+              formValuetype="text"
+              class="form-control"
+              formControlName="cliente"
+
+            />
+
           </div>
           <div class="col-md-8">
-            <label class="form-label mt-3">Agência:</label>
+            <label class="form-label mt-3">Agência: </label>
             <input
+            [(ngModel)]="conta.agencia"
               formValuetype="text"
               class="form-control"
               formControlName="agencia"
@@ -28,8 +39,9 @@
             />
           </div>
           <div class="col-md-8">
-            <label class="form-label mt-3">Número da Conta:</label>
+            <label class="form-label mt-3">Conta: </label>
             <input
+             [(ngModel)]="conta.numero"
               formValuetype="text"
               class="form-control"
               formControlName="numero"
@@ -37,8 +49,9 @@
             />
           </div>
           <div class="col-md-8">
-            <label class="form-label mt-3">Saldo:</label>
+            <label class="form-label mt-3">Saldo: </label>
             <input
+              [(ngModel)]="conta.saldo"
               formValuetype="text"
               class="form-control"
               formControlName="saldo"
@@ -50,13 +63,11 @@
               class="btn btn-danger btn-sm float-right mt-4"
               [disabled]="!form.valid">
 
-              <i class="fa fa-save"></i>Cadastrar
+              <i class="fa fa-check"></i>Salvar
 
                 </button>
         </div>
         </div>
-
-
         </form>
 
     </div>

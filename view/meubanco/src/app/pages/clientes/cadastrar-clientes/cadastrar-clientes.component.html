@@ -14,9 +14,10 @@
 
         <div class="form-group">
 
-          <label for="">Nome: *</label>
+          <label for="">Nome: <small class="text-danger mb-2" *ngIf="myForm.get('nome')?.errors &&
+            myForm.get('nome')?.hasError('required')">*</small></label>
 
-          <input type="text" class="form-control" formControlName="nome" required>
+          <input  [(ngModel)]="client.nome" type="text" class="form-control" formControlName="nome" required>
 
         </div>
 
@@ -26,9 +27,10 @@
 
         <div class="form-group">
 
-          <label for="">Email: *</label>
+          <label for="">Email:  <small class="text-danger mb-2" *ngIf="myForm.get('email')?.errors &&
+            myForm.get('email')?.hasError('required')">*</small></label>
 
-          <input type="email" class="form-control" formControlName="email" required>
+          <input [(ngModel)]="client.email" type="email" class="form-control" formControlName="email" required>
 
         </div>
 
@@ -38,9 +40,10 @@
 
         <div class="form-group">
 
-          <label for="">CPF: *</label>
+          <label for="">CPF:  <small class="text-danger mb-2" *ngIf="myForm.get('cpf')?.errors &&
+            myForm.get('cpf')?.hasError('required')">*</small></label>
 
-          <input type="text" class="form-control" (blur)="convertCpf()" formControlName="cpf" id="cpf" required >
+          <input [(ngModel)]="client.cpf" type="text" class="form-control" (blur)="convertCpf()" formControlName="cpf" id="cpf" required >
 
         </div>
 
@@ -52,7 +55,7 @@
 
             <label for="">Observações:</label>
 
-            <textarea type="text" class="form-control" formControlName="observacoes" ></textarea>
+            <textarea [(ngModel)]="client.observacoes" type="text" class="form-control" formControlName="observacoes" ></textarea>
 
         </div>
 
@@ -76,7 +79,7 @@
         class="btn btn-danger btn-sm float-right"
         [disabled]="!myForm.valid">
 
-        <i class="fa fa-save"></i>Cadastrar
+        <i class="fa fa-save"></i>{{ id? 'Atualizar' : 'Cadastrar' }}
 
           </button>
       </div>
