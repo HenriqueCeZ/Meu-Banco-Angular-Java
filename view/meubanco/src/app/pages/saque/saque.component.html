@@ -7,13 +7,13 @@
     <div class="col">
       <label for="exampleFormControlInput1" class="form-label">Agencia: <small class="text-danger mb-2" *ngIf="formGroup.get('agencia')?.errors &&
         formGroup.get('agencia')?.hasError('required')">*</small></label>
-      <input  type="text" class="form-control" autofocus formControlName="agencia">
+      <input maxlength="4"  type="text" class="form-control" autofocus formControlName="agencia">
     </div>
 
     <div class="col">
       <label for="exampleFormControlInput1" class="form-label">Conta: <small class="text-danger mb-2" *ngIf="formGroup.get('numeroConta')?.errors &&
         formGroup.get('numeroConta')?.hasError('required')">*</small></label>
-      <input type="text" class="form-control" formControlName="numeroConta">
+      <input maxlength="6" type="text" class="form-control" formControlName="numeroConta">
     </div>
 
     <div class="col">
