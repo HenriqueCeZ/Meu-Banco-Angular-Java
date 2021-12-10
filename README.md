@@ -11,7 +11,7 @@
 </p>
 
 ```php 
-Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcianado pela Indra
+Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcianado pela Indra em parceria com a UNIESP
 ```
 ## Objetivo do projeto 
 <i>
