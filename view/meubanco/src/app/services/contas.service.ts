@@ -1,11 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IContas } from '../interfaces/contas';
 import { ISaqueDeposito } from '../interfaces/saqueDeposito';
 import { ITransferencia } from '../interfaces/transferencia';
-import { Contas } from '../pages/contas/contas';
+import { Contas } from '../DTO/contas';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +22,8 @@ export class ContasService {
     return this.http.get<IContas[]>(this.api)
 
   }
-  create(obj: Contas){
-    return this.http.post<Contas>(this.api, obj);
+  create(obj: IContas){
+    return this.http.post<IContas>(this.api, obj);
 }
 
 
