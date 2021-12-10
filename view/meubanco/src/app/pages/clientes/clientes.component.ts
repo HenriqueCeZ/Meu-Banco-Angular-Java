@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ICliente } from 'src/app/interfaces/cliente';
 import { ClientService } from 'src/app/services/client.service';
 import Swal from 'sweetalert2';
+import * as _ from 'lodash';
+import 'lodash';
 
 @Component({
   selector: 'app-clientes',
@@ -46,9 +48,15 @@ export class ClientesComponent implements OnInit {
             'success'
           );
           this.listarTodosClientes()
-          console.log(id)
+
         }, error => {
-          console.error(error)
+          let erro = _.get(error, 'error.detalhes')
+          Swal.fire({
+            icon: 'error',
+            title: 'Erro ao atualizar',
+            text: `${erro}`
+          })
+
         })
 
       }
