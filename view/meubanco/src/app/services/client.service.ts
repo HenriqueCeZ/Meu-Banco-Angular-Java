@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ICliente } from '../interfaces/cliente';
-import { Cliente } from '../pages/clientes/cadastrar-clientes/cliente';
+import { Cliente } from '../DTO/cliente';
 
 @Injectable({
   providedIn: 'root'
