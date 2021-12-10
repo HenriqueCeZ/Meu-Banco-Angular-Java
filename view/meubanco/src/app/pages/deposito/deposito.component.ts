@@ -4,6 +4,8 @@ import { ContasService } from 'src/app/services/contas.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { ISaqueDeposito } from 'src/app/interfaces/saqueDeposito';
+import * as _ from 'lodash';
+import 'lodash';
 @Component({
   selector: 'app-deposito',
   templateUrl: './deposito.component.html',
@@ -33,7 +35,12 @@ export class DepositoComponent implements OnInit {
       console.log(clienteApi)
       this.router.navigate(['/contas'])
     },error =>{
-      console.log(error)
+      let erro = _.get(error, 'error.detalhes')
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro na Operação',
+        text: `${erro}`,
+      })
     })
     this.formGroup.reset()
 
