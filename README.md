@@ -31,7 +31,11 @@ Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcian
 * O usuário pode deletar os dados de clientes
 
 * O usuário pode criar novas contas
-
+ 
+* O usuário pode deletar contas
+ 
+* O usuário pode editar contas
+ 
 * O usuário pode transferir dinheiro entre as contas
 
 * O usuário pode realizar saque das contas
