@@ -1,0 +1,89 @@
+<div class="container">
+
+<ol class=" mb-4">
+  <h2 class="breadcrumb-item active">{{ id? 'Edit Cliente' : 'Cliente Cadastro' }}</h2>
+
+</ol>
+
+
+
+
+<form  [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+      <div class="col-md-8">
+
+        <div class="form-group">
+
+          <label for="">Nome: <small class="text-danger mb-2" *ngIf="myForm.get('nome')?.errors &&
+            myForm.get('nome')?.hasError('required')">*</small></label>
+
+          <input  [(ngModel)]="client.nome" type="text" class="form-control" formControlName="nome" required>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-8">
+
+        <div class="form-group">
+
+          <label for="">Email:  <small class="text-danger mb-2" *ngIf="myForm.get('email')?.errors &&
+            myForm.get('email')?.hasError('required')">*</small></label>
+
+          <input [(ngModel)]="client.email" type="email" class="form-control" formControlName="email" required>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-8 ">
+
+        <div class="form-group">
+
+          <label for="">CPF:  <small class="text-danger mb-2" *ngIf="myForm.get('cpf')?.errors &&
+            myForm.get('cpf')?.hasError('required')">*</small></label>
+
+          <input [(ngModel)]="client.cpf" type="text" class="form-control" (blur)="convertCpf()" formControlName="cpf" id="cpf" required >
+
+        </div>
+
+      </div>
+
+      <div class="col-md-8">
+
+        <div class="form-group">
+
+            <label for="">Observações:</label>
+
+            <textarea [(ngModel)]="client.observacoes" type="text" class="form-control" formControlName="observacoes" ></textarea>
+
+        </div>
+
+
+      </div>
+      <div class="col-md-8">
+        <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input " type="checkbox" id="gridCheck" id="ativo" formControlName="ativo" >
+        <label  for="status">Ativo</label>
+      </div>
+    </div>
+    </div>
+    <div class="col-md-8">
+
+      <div class="d-flex justify-content-end" >
+
+
+
+        <button type="submit"
+        class="btn btn-danger btn-sm float-right"
+        [disabled]="!myForm.valid">
+
+        <i class="fa fa-save"></i>{{ id? 'Atualizar' : 'Cadastrar' }}
+
+          </button>
+      </div>
+    </div>
+</form>
+
+</div>

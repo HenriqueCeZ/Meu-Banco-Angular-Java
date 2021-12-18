@@ -1,0 +1,44 @@
+<h1 class="mt-5 mb-4 text-secondary ">Transferência</h1>
+
+
+<form [formGroup]="formGroup" class="mb-3" (ngSubmit)="transferencia()">
+
+    <div class="row">
+
+
+
+      <div class="col">
+        <label for="exampleFormControlInput1" class="form-label">Agência de Origem: <small class="text-danger mb-2" *ngIf="formGroup.get('agenciaOrigem')?.errors &&
+          formGroup.get('agenciaOrigem')?.hasError('required')">*</small></label>
+        <input maxlength="4"  type="text" class="form-control"  formControlName="agenciaOrigem">
+      </div>
+      <div class="col">
+        <label for="exampleFormControlInput1" class="form-label">Conta de Origem: <small class="text-danger mb-2" *ngIf="formGroup.get('numeroContaOrigem')?.errors &&
+          formGroup.get('numeroContaOrigem')?.hasError('required')">*</small></label>
+        <input maxlength="6"  type="text" class="form-control"  formControlName="numeroContaOrigem">
+      </div>
+    </div>
+    <div class="row mt-4">
+
+      <div class="col">
+        <label for="exampleFormControlInput1" class="form-label">Agência do Destinatário: <small class="text-danger mb-2" *ngIf="formGroup.get('agenciaDestino')?.errors &&
+          formGroup.get('agenciaDestino')?.hasError('required')">*</small></label>
+        <input maxlength="4" type="text" class="form-control"  formControlName="agenciaDestino">
+      </div>
+      <div class="col">
+        <label for="exampleFormControlInput1" class="form-label">Conta do Destinatário: <small class="text-danger mb-2" *ngIf="formGroup.get('numeroContaDestino')?.errors &&
+          formGroup.get('numeroContaDestino')?.hasError('required')">*</small></label>
+        <input maxlength="6"  type="text" class="form-control"  formControlName="numeroContaDestino">
+      </div>
+      <div class="col">
+        <label for="exampleFormControlInput1" class="form-label">Valor: <small class="text-danger mb-2" *ngIf="formGroup.get('valor')?.errors &&
+          formGroup.get('valor')?.hasError('required')">*</small></label>
+        <input  type="text" class="form-control"  formControlName="valor">
+      </div>
+
+  </div>
+  <div class="d-flex justify-content-end">
+  <button [disabled]="!formGroup.valid" type="submit" class=" mt-4 btn btn-danger text-center "
+    titulo="transferencia"> Transferir <i class="fas fa-money-bill-alt "></i></button>
+  </div>
+</form>

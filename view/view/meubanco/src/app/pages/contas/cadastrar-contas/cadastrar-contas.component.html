@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+    <div class="cal">
+      <h2 class="breadcrumb-item active">{{ id? 'Edit Conta' : 'Conta cadastro' }}</h2>
+      <hr />
+
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+          <div class="col-md-8" *ngIf="id">
+            <label class="form-label mt-3">ClienteID:</label>
+            <input
+            [(ngModel)]="conta.cliente.id"
+              formValuetype="text"
+              class="form-control"
+              formControlName="cliente"
+
+            />
+
+          </div>
+          <div class="col-md-8" *ngIf="!id">
+            <label class="form-label mt-3">ClienteID:</label>
+            <input
+            [(ngModel)]="conta.cliente"
+              formValuetype="text"
+              class="form-control"
+              formControlName="cliente"
+
+            />
+
+          </div>
+          <div class="col-md-8">
+            <label class="form-label mt-3">Agência: </label>
+            <input
+            [(ngModel)]="conta.agencia"
+              formValuetype="text"
+              class="form-control"
+              formControlName="agencia"
+              maxlength="4"
+            />
+          </div>
+          <div class="col-md-8">
+            <label class="form-label mt-3">Conta: </label>
+            <input
+             [(ngModel)]="conta.numero"
+              formValuetype="text"
+              class="form-control"
+              formControlName="numero"
+              maxlength="6"
+            />
+          </div>
+          <div class="col-md-8">
+            <label class="form-label mt-3">Saldo: </label>
+            <input
+              [(ngModel)]="conta.saldo"
+              formValuetype="text"
+              class="form-control"
+              formControlName="saldo"
+            />
+          </div>
+          <div class="col-md-8 ">
+            <div class="d-flex justify-content-end">
+              <button type="submit"
+              class="btn btn-danger btn-sm float-right mt-4"
+              [disabled]="!form.valid">
+
+              <i class="fa fa-check"></i>Salvar
+
+                </button>
+        </div>
+        </div>
+        </form>
+
+    </div>
+  </div>
+</div>

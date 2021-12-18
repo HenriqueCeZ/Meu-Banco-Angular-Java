@@ -1,0 +1,58 @@
+
+<h3 class=" mt-4 text-secondary">Lista de Clientes</h3>
+
+<div *ngIf="!clientes.length">
+  <div class="spinner-grow text-dark d-flex pl-15" role="status">
+
+    <h1 class="ml-5 pl-15 mb-20 ">Carregando...</h1>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row d-flex d-flex justify-content-end ">
+      <div class="col-md-2 d-flex align-items-end ">
+          <button *ngIf="clientes.length" class="btn btn-light btn-sm ml-auto p-2 bd-highlight  " routerLink="/clientes/cadastrar" routerLinkActive="active"><i class=" fa fa-plus" ></i>Adicionar</button>
+      </div>
+  </div>
+  <br>
+
+<table *ngIf="clientes.length" class="table table-dark table-hover ">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">CPF</th>
+      <th scope="col">Observações</th>
+      <th scope="col">Status</th>
+      <th class="text-center" >Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes;">
+      <td>{{ cliente.id }}</td>
+      <td>{{ cliente.nome }}</td>
+      <td>{{ cliente.email }}</td>
+      <td>{{ cliente.cpf }}</td>
+      <td>{{ cliente.observacoes }}</td>
+      <td>
+        <i *ngIf="cliente.ativo" class="fas fa-thumbs-up text-success"></i>
+        <i *ngIf="!cliente.ativo" class="fas fa-thumbs-down text-danger"></i>
+      </td>
+      <td class="d-flex justify-content-center" >
+        <button class="btn btn-dar ml-3" routerLink= "/clientes/editar/{{ cliente.id }}"
+
+      >  <i class="fa fa-edit" ></i>
+
+    </button>
+
+        <button class="btn btn-danger ml-3"
+        (click)="deletar(cliente.id)"
+      >  <i class="fa fa-trash"></i>
+
+    </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
