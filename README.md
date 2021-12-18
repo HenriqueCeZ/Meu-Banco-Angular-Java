@@ -78,7 +78,9 @@ Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcian
 
 
  ## Funcionalidades do Back-end 
-[] Criar API REST Spring <br>
+[✔] Criar API REST Spring <br>
+[✔] Criar Model Cliente<br>
+[✔] Criar Model Conta<br>
 [] Cadastrar Clientes<br>
 [] Listar Clientes<br>
 [] Atualizar Clientes<br>
