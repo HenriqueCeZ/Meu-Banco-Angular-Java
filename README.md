@@ -11,7 +11,7 @@
 </p>
 
 ```php 
-Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcianado pela Indra
+Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcianado pela Indra em parceria com a UNIESP
 ```
 ## Objetivo do projeto 
 <i>
@@ -31,7 +31,11 @@ Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcian
 * O usuário pode deletar os dados de clientes
 
 * O usuário pode criar novas contas
-
+ 
+* O usuário pode deletar contas
+ 
+* O usuário pode editar contas
+ 
 * O usuário pode transferir dinheiro entre as contas
 
 * O usuário pode realizar saque das contas
@@ -74,7 +78,9 @@ Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcian
 
 
  ## Funcionalidades do Back-end 
-[] Criar API REST Spring <br>
+[✔] Criar API REST Spring <br>
+[✔] Criar Model Cliente<br>
+[✔] Criar Model Conta<br>
 [] Cadastrar Clientes<br>
 [] Listar Clientes<br>
 [] Atualizar Clientes<br>
