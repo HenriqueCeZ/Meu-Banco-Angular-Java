@@ -81,14 +81,14 @@ Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcian
 [✔] Criar API REST Spring <br>
 [✔] Criar Model Cliente<br>
 [✔] Criar Model Conta<br>
-[] Cadastrar Clientes<br>
-[] Listar Clientes<br>
-[] Atualizar Clientes<br>
-[] Deletar Clientes<br>
-[] Cadastrar Contas<br>
-[] Listar Contas<br>
-[] Atualizar Contas<br>
-[] Deletar Contas<br>
+[✔] Cadastrar Clientes<br>
+[✔] Listar Clientes<br>
+[✔] Atualizar Clientes<br>
+[✔] Deletar Clientes<br>
+[✔] Cadastrar Contas<br>
+[✔] Listar Contas<br>
+[✔] Atualizar Contas<br>
+[✔] Deletar Contas<br>
 
 
 
@@ -99,5 +99,5 @@ Esse repositório é dedicado ao desafio e treinamento Java e Angular proporcian
 
 ##
 
-### ⌛ <i>Status: **`Em andamento`** </i>
+### ⌛ <i>Status: **`Concluído`** </i>
  
